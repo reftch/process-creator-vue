@@ -3,7 +3,7 @@
     <div class="topbar-left">
       <div class="topbar-logo">
         <span class="icon-logo" @click.stop="home" />
-        <span class="logo" @click.stop="home">Vue</span>
+        <span class="logo" @click.stop="home">Nathalie</span>
       </div>
       <div class="topbar-title" @click.stop="home">Process Creator</div>
       <div class="topbar-ui"></div>
