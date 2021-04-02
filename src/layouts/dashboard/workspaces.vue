@@ -5,7 +5,7 @@
       <span class="form-description-icon icon-help" />These are
       Process Creator's workspaces settings for the projects location behaviour.
       These settings are unrelated to the process's definitions, parameters and
-      behaviour. <a href="#">Learn more.</a>
+      behaviour. <a href="https://vuejs.org/">Learn more.</a>
     </div>
 
     <div class="widget">
