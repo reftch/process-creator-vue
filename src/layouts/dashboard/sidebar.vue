@@ -13,7 +13,7 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, nextTick, onMounted, PropType } from "vue";
+import { defineComponent, PropType } from "vue";
 import { SectionState } from "@/model";
 import router from "@/router";
 
