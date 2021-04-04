@@ -44,7 +44,7 @@ export default defineComponent({
   setup(props, context) {
     const select = ref<HTMLElement>();
     const model = ref(null);
-    let origin = props.modelValue || '';
+    const origin = ref(props.modelValue || '');
 
     const activate = () => {
       if (!props.disabled) {
@@ -59,17 +59,16 @@ export default defineComponent({
     const setNewValue = (value: string) => {
       context.emit("update:modelValue", value);
       context.emit("change", value);
-      origin = props.modelValue;
     };
 
     const keydown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
-        setNewValue(origin);
+        setNewValue(origin.value);
         deactivate();
       } else if (event.key === "Enter") {
-        origin = props.modelValue;
+        origin.value = props.modelValue;
         activate();       
-      } else if (event.key === "ArrowDown") {
+      } else if (event.key === "ArrowDown" && select.value?.classList.contains("open")) {
         if (props.options) {
           for (let i = 0; i < props.options.length; i++) {
             const option = props.options[i];
@@ -80,7 +79,7 @@ export default defineComponent({
             }
           }
         }
-      } else if (event.key === "ArrowUp") {
+      } else if (event.key === "ArrowUp" && select.value?.classList.contains("open")) {
         if (props.options) {
           for (let i = 0; i < props.options.length; i++) {
             const option = props.options[i];
